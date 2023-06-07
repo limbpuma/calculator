@@ -1,0 +1,427 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+color1:#090809
+color2:#1A1A1A
+color3: #272530
+color4:#E0E0E0
+color5: #7444C6
+*/
+
+/* General CSS */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+  font-size: 1.6rem;
+  color: #e0e0e0;
+  background-color: #e5e5e5;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+img {
+  height: 4rem;
+  width: auto;
+}
+
+.container-calculator {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to right, #090809, #3d3b47);
+}
+
+.calculator-text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo p {
+  margin: 1rem;
+}
+
+.text p {
+  margin-top: 2rem;
+}
+
+.button-github {
+  font-weight: bolder;
+  background-color: #1f1d26;
+  color: #7a47d1;
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 5px rgba(3, 3, 3, 0.5);
+}
+
+.calculator {
+  position: relative;
+  width: 30rem;
+  height: 50rem;
+  display: grid;
+  align-content: space-around;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: #272530;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.result {
+  height: 10rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  font-weight: bolder;
+}
+
+.button-calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.button-calculator button {
+  border: none;
+  font-weight: bolder;
+  width: 5rem;
+  height: 5rem;
+  color: #e0e0e0;
+  border-radius: 50%;
+}
+
+.operator {
+  background: linear-gradient(145deg, #6336b1, #7a47d1);
+  box-shadow: 5px 5px 5px #211f29, -5px -5px 5px #292732;
+}
+
+.operator:active {
+  background: linear-gradient(145deg, #7a47d1, #6336b1);
+  box-shadow: inset 5px 5px 5px #7a47d1, inset -5px -5px 5px #6336b1;
+}
+
+.number {
+  background: linear-gradient(145deg, #23212b, #2a2833);
+  box-shadow: 5px 5px 5px #211f29, -5px -5px 5px #292732;
+}
+
+.number:active {
+  background: linear-gradient(145deg, #1f1d26, #23212b);
+  box-shadow: inset 5px 5px 5px #211f29, inset -5px -5px 5px #292732;
+}
+
+.waves {
+  width: 100%;
+  height: 15vh;
+  margin-top: -10rem;
+  margin-bottom: 8rem;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+.about-project {
+  color: #090809;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+
+.about-project h2 {
+  margin-bottom: 2rem;
+}
+
+.aboutme {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  background-color: #090809;
+  padding: 2rem;
+  border-radius: 5rem;
+  color: #e0e0e0;
+  box-shadow: 5px 5px 5px rgba(3, 3, 3, 0.5);
+  margin-bottom: 4rem;
+}
+
+.aboutme-text h3 {
+  margin-bottom: 0.4rem;
+}
+
+.aboutme img {
+  margin-right: 2rem;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px rgba(48, 48, 48, 0.5);
+}
+
+.aboutme-linkedin {
+  color: #e0e0e0;
+  margin-top: 0.4rem;
+  display: flex;
+}
+
+.aboutme-linkedin p {
+  margin-left: 1rem;
+}
+
+/* Estilos para pantallas pequeñas y dispositivos móviles */
+
+@media screen and (max-width: 768px) {
+  .button-github {
+    width: 100%;
+    position: relative;
+  }
+  .about-project {
+    margin-top: 8rem;
+    width: 80%;
+    margin: auto;
+  }
+  .aboutme {
+    width: 80%;
+    margin: 8rem 0 8rem 0;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+
+@media screen and (max-width: 480px) {
+  .container-calculator {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .calculator-text {
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50vh;
+  }
+  .calculator {
+    margin-top: 8rem;
+  }
+  .about-project {
+    margin-top: 8rem;
+    width: 90%;
+    margin: auto;
+  }
+  .aboutme {
+    width: 90%;
+    margin: 8rem 0 8rem 0;
+  }
+}
